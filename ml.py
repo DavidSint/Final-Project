@@ -140,7 +140,6 @@ while True:
         rhos = dict.fromkeys(range(24))
         pvals = dict.fromkeys(range(24))
         for i in range(24):
-            print(df[[i]])
             rhos[i], pvals[i] = st.pearsonr(df[[i]], df[['target']])
 
         print('=======\n\nPearson:\n')
@@ -168,16 +167,6 @@ while True:
         plt.xticks(y_pos, bars)
         plt.show()
 
-        # print('=======\n\nSpearman:\n')
-
-        # rhos = dict.fromkeys(range(24))
-        # pvals = dict.fromkeys(range(24))
-        # for i in range(24):
-        #     rhos[i], pvals[i] = st.spearmanr(df[[i]], df[['target']])
-
-        # for key in range(24):
-        #     print('time = {}, rho = {}, pval = {}'.format(key, rhos[key],
-        #                                                   pvals[key]))
     elif ans.split(' ', 1)[0] == "coors":
         from scipy import stats as st
         tickerlist = []
