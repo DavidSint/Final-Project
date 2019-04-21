@@ -40,12 +40,19 @@ To run `ml.py`, run the command:
 ```bash
 python ml.py
 ```
+You will be presented with multiple options. But, you *must* run the first three commands in order before any others.
 
-You will be presented with the following options: 
+The first commands you must run (in order) are:
+1. `get`
+2. `baseline`
+3. `tweets`
+These will generate the necessary CSV files in `Data/`. After this, you can use the other commands.
+
+
 
 | Command | Purpose | Arguments | Parameter details |
 |:---:|---|---|---|
-| `get` | Will get the data from MongoDB and store in CSV files. Starts the cleaning process. | | None |
+| `get` | Will get the data from MongoDB and store it in CSV files. This will also start the data cleaning process. After this stage, the MongoDB can be shut down. | | None |
 | `baseline` | Finishes the cleaning process and makes the baseline dataset CSVs | | None |
 | `tweets` | Finishes the cleaning process and makes the tweets dataset CSVs | | None |
 | `pearson` | Will print the Pearson correlations and plot on a graph | ticker | Optional parameter: ticker of stock Default: AAPL |
