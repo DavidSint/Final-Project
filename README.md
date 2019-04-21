@@ -36,7 +36,7 @@ python ml.py
 
 You will be presented with the following options: 
 | Command | Purpose | Arguments | Parameter details |
-|:-:|---|---|---|
+|:---:|---|---|---|
 | `get` | Will get the data from MongoDB and store in CSV files. Starts the cleaning process. | | None |
 | `baseline` | Finishes the cleaning process and makes the baseline dataset CSVs | | None |
 | `tweets` | Finishes the cleaning process and makes the tweets dataset CSVs | | None |
