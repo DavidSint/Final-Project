@@ -1,0 +1,2 @@
+AAPL.bson filter=lfs diff=lfs merge=lfs -text
+FOX.bson filter=lfs diff=lfs merge=lfs -text
