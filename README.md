@@ -9,9 +9,10 @@ The python files were run in a conda environment, of which the environment.yml c
 ```bash
 conda env create --name envname -f environment.yml
 ```
+Activate this environment, for use with this project.
 
 ## Data
-The data stored in my database is too large for me to share in the supporting material folder. The MongoDB has been dumped to a folder called dump in the repo and can be restored to a local MongoDB instance by using the command:
+The data stored in my database is too large for me to share in the supporting material folder. The MongoDB has been dumped to a folder called `dump` in the repo and can be restored to a local MongoDB instance by using the command:
 ```bash
 mongorestore dump
 ```
@@ -32,6 +33,7 @@ Python files can be found in the home directory of the repo or supporting materi
 * `iexgetter.py` was used to collect stock prices from IEX Finance.
 * `ml.py` was used for calculating the analysis. Its use is explained below.
 * `auxillary.py` and `functions.py` are supporting files for `ml.py`.
+* `config.py` should contain the gmail password and API key. These have been left out! you can get your own API key at [AlphaVantage](https://www.alphavantage.co/support/#api-key).
 
 ## ml.py
 `ml.py` makes the csv files and performs the correlation and machine learning analyses.
