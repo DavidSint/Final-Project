@@ -48,7 +48,7 @@ The first commands you must run (in order) are:
 1. `get`
 2. `baseline`
 3. `tweets`
-These will generate the necessary CSV files in `Data/`. After this, you can use the other commands.
+These will generate the necessary CSV files in `Data/`. After this, you can use the other commands. 
 
 
 
@@ -64,3 +64,19 @@ These will generate the necessary CSV files in `Data/`. After this, you can use 
 | `linearSVR` | Will calculate the baseline and tweets MAPE as well as their difference for Linear SVR | test_size, tol | Optional parameters: test size and tolerance Default: 0.1, 1e-5 |
 | `kNearest` | Will calculate the baseline and tweets MAPE as well as their difference for k-nearest neighbor | test_size, neigh | Optional parameters: test size and number of neighbors Default: 0.1, 3 |
 | `exit` | Will quit the script | | None |
+
+## Troubleshooting
+*Problem with MongoDB when running `get` command*
+If you find an issue with MongoDB, first try the mongorestore individually for each db:
+```bash
+mongorestore -d StocksDB dump/StocksDB
+mongorestore -d TestStocksDB dump/TestStocksDB
+mongorestore -d TweetsDB dump/TweetsDB
+```
+If this still does not fix the issue, then large `.bson` files may need to be manually copied over to the MongoDB instance. The two largest files are `dump/TweetsDB/AAPL.bson` and `dump/TweetsDB/FOX.bson`.
+
+*Problem with libraries or Conda*
+Ensure that the conda environment has been activated and the libraries from `environment.yml` are shown when you run the command `conda list`.
+
+*Problem running the correlation or regressors*
+Ensure that the get, baseline and tweets commands have been run completely without errors. API errors are expected, and not a problem.
