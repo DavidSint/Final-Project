@@ -42,7 +42,7 @@ To run `ml.py`, run the command:
 ```bash
 python ml.py
 ```
-You will be presented with multiple options. But, you *must* run the first three commands in order before any others.
+You will be presented with multiple options. But, you **must** run the first three commands in order before any others.
 
 The first commands you must run (in order) are:
 1. `get`
@@ -66,7 +66,8 @@ These will generate the necessary CSV files in `Data/`. After this, you can use 
 | `exit` | Will quit the script | | None |
 
 ## Troubleshooting
-*Problem with MongoDB when running `get` command*
+**Problem with MongoDB when running `get` command**
+
 If you find an issue with MongoDB, first try the mongorestore individually for each db:
 ```bash
 mongorestore -d StocksDB dump/StocksDB
@@ -75,8 +76,10 @@ mongorestore -d TweetsDB dump/TweetsDB
 ```
 If this still does not fix the issue, then large `.bson` files may need to be manually copied over to the MongoDB instance. The two largest files are `dump/TweetsDB/AAPL.bson` and `dump/TweetsDB/FOX.bson`.
 
-*Problem with libraries or Conda*
+**Problem with libraries or Conda**
+
 Ensure that the conda environment has been activated and the libraries from `environment.yml` are shown when you run the command `conda list`.
 
-*Problem running the correlation or regressors*
+**Problem running the correlation or regressors**
+
 Ensure that the get, baseline and tweets commands have been run completely without errors. API errors are expected, and not a problem.
