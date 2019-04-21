@@ -30,6 +30,23 @@ if (stock_window_length/stock_bin_length).is_integer() == False:
     raise Exception('stock window length mod stock bin length should be 0. it was: {}'.format(
         str(stock_window_length/stock_bin_length)))
 
+    # function to read from a db into a pandas df
+    # https://stackoverflow.com/questions/16249736/how-to-import-data-from-mongodb-to-pandas
+def read_from_db(db, ticker, query={}, no_id=True):
+    cursor = db[ticker].find(query)
+    df = pd.DataFrame(list(cursor))
+    try:
+        if no_id:
+            del df['_id']
+    except KeyError as e:
+        print("There is a problem with the MongoDB instance:", ticker,"from", str(db), "has caused an error. Are you sure it has been restored properly?")
+        exit()
+
+    df['timestamp'] = pd.to_datetime(
+        df['timestamp'],  infer_datetime_format=True)
+    df = df.sort_values(by='timestamp')
+    return df
+
 
 def get(ticker):
     '''
@@ -39,18 +56,6 @@ def get(ticker):
     start_date = datetime(2018, 10, 29).date()
     end_date = datetime(2019, 3, 25).date()
 
-    # function to read from a db into a pandas df
-    # https://stackoverflow.com/questions/16249736/how-to-import-data-from-mongodb-to-pandas
-    def read_from_db(db, ticker, query={}, no_id=True):
-        cursor = db[ticker].find(query)
-        df = pd.DataFrame(list(cursor))
-        if no_id:
-            del df['_id']
-
-        df['timestamp'] = pd.to_datetime(
-            df['timestamp'],  infer_datetime_format=True)
-        df = df.sort_values(by='timestamp')
-        return df
 
     client = MongoClient('localhost', 27017)
     StocksDB = client.StocksDB

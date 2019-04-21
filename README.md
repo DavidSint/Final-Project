@@ -15,7 +15,14 @@ The data stored in my database is too large for me to share in the supporting ma
 ```bash
 mongorestore dump
 ```
-The tickers.txt file is a file of the S&P 100 tickers, it has the ticker for $BIIB removed, as explained in the report. However, if you would like to add it back in for data collection purposes, it can be added with the new line, `BIIB`.
+Sometimes MongoDB fails to restore all the collections and documents from multiple DBs. In this instance they can be restored individually with the commands:
+```bash
+mongorestore -d StocksDB dump/StocksDB
+mongorestore -d TestStocksDB dump/TestStocksDB
+mongorestore -d TweetsDB dump/TweetsDB
+```
+
+The Data/tickers.txt file is a list of the S&P 100 tickers, it has the ticker for $BIIB removed, as explained in the report. However, if you would like to add it back in for data collection purposes, it can be added with the new line, `BIIB`.
 
 ## Python Files
 Python files can be found in the home directory of the repo or supporting materials folder.
