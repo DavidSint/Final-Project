@@ -33,7 +33,7 @@ Python files can be found in the home directory of the repo or supporting materi
 * `iexgetter.py` was used to collect stock prices from IEX Finance.
 * `ml.py` was used for calculating the analysis. Its use is explained below.
 * `auxillary.py` and `functions.py` are supporting files for `ml.py`.
-* `config.py` should contain the gmail password and API key. These have been left out! you can get your own API key at [AlphaVantage](https://www.alphavantage.co/support/#api-key).
+* `config.py` should contain the gmail password and API key. These have been left out! You can get your own API key at [AlphaVantage](https://www.alphavantage.co/support/#api-key).
 
 ## ml.py
 `ml.py` makes the csv files and performs the correlation and machine learning analyses.
