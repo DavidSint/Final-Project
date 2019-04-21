@@ -35,15 +35,15 @@ python ml.py
 ```
 
 You will be presented with the following options: 
-|    Command  | Purpose                                                                                        | Arguments               | Parameter details                                                           |
-|:-----------:|------------------------------------------------------------------------------------------------|-------------------------|-----------------------------------------------------------------------------|
-|    `get`    | Will get the data from MongoDB and store in CSV files. Starts the cleaning process.            |                         | None                                                                        |
-|  `baseline` | Finishes the cleaning process and makes the baseline dataset CSVs                              |                         | None                                                                        |
-|   `tweets`  | Finishes the cleaning process and makes the tweets dataset CSVs                                |                         | None                                                                        |
-|  `pearson`  | Will print the Pearson correlations and plot on a graph                                        | ticker                  | Optional parameter: ticker of stock Default: AAPL                           |
-|   `coors`   | Will print the Pearson correlation ordered by coefficient values                               |                         | None                                                                        |
-|     `rf`    | Will calculate the baseline and tweets MAPE as well as their difference for Random Forest      | test_size, n_estimators |  Optional parameters: test size and number of estimators Default: 0.1, 1000 |
-|   `linear`  | Will calculate the baseline and tweets MAPE as well as their difference for Linear Regression  | test_size               | Optional parameters: test size Default: 0.1                                 |
-| `linearSVR` | Will calculate the baseline and tweets MAPE as well as their difference for Linear SVR         | test_size, tol          | Optional parameters: test size and tolerance Default: 0.1, 1e-5             |
-|  `kNearest` | Will calculate the baseline and tweets MAPE as well as their difference for k-nearest neighbor | test_size, neigh        | Optional parameters: test size and number of neighbors Default: 0.1, 3      |
-|    `exit`   | Will quit the script                                                                           |                         | None                                                                        |
+| Command | Purpose | Arguments | Parameter details |
+|:-:|---|---|---|
+| `get` | Will get the data from MongoDB and store in CSV files. Starts the cleaning process. | | None |
+| `baseline` | Finishes the cleaning process and makes the baseline dataset CSVs | | None |
+| `tweets` | Finishes the cleaning process and makes the tweets dataset CSVs | | None |
+| `pearson` | Will print the Pearson correlations and plot on a graph | ticker | Optional parameter: ticker of stock Default: AAPL |
+| `coors` | Will print the Pearson correlation ordered by coefficient values | | None |
+| `rf` | Will calculate the baseline and tweets MAPE as well as their difference for Random Forest | test_size, n_estimators | Optional parameters: test size and number of estimators Default: 0.1, 1000 |
+| `linear` | Will calculate the baseline and tweets MAPE as well as their difference for Linear Regression | test_size | Optional parameters: test size Default: 0.1 |
+| `linearSVR` | Will calculate the baseline and tweets MAPE as well as their difference for Linear SVR | test_size, tol | Optional parameters: test size and tolerance Default: 0.1, 1e-5 |
+| `kNearest` | Will calculate the baseline and tweets MAPE as well as their difference for k-nearest neighbor | test_size, neigh | Optional parameters: test size and number of neighbors Default: 0.1, 3 |
+| `exit` | Will quit the script | | None |
