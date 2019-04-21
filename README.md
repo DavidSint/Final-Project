@@ -1,5 +1,5 @@
 # ReadMe
-This was an experiment and a research project. The files included are some of those that helped me collect and analyse the data.
+This was an experiment and a research project for my Final Year at QMUL. The files included are some of those that helped me collect and analyse the data some have been also included in the supporting material, but others are only available on GitHub due to file size limits.
 
 # Project Files
 As well as in the supporting materials folder, I have pushed the files to a repo on [GitHub](https://github.com/DavidSint/Final-Project), where it can be downloaded/cloned.
